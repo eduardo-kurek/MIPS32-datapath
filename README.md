@@ -40,3 +40,9 @@ Nem todas as instruções do MIPS32 foram implementadas. Segue uma lista das ins
 * `add`, `sub`, `slt`, `sll`, `srl`, `and`, `or`, `nor` e `jr` do formato R;
 * `j` e `jal` do formato J;
 * `addi`, `beq`, `bne`, `lw` e `sw` do formato I;
+
+# Cartão de referência
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4a05e4b1-758b-4964-8ba2-cb631ef8158c" alt="mips-ref">
+</p>
+
