@@ -1,4 +1,5 @@
 # Caminho de dados - MIPS32
+![datapath](https://github.com/user-attachments/assets/1812b4cb-39a0-43bd-be72-2b8117119f4a)
 Esse projeto foi realizado na disciplina de **Arquitetura e Organização de Computadores** (2024/1) do curso Ciência da Computação da Universidade Tecnológica Federal do Paraná | UTFPR-CM. O objetivo era de construir um datapath simples de um processador da arquitetura MIPS32. Para isso, utilizamos o simulador *logisim* para observar as alterações dos sinais lógicos.
 
 # Como executar um código
