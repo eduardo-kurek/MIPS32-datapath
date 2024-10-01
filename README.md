@@ -33,3 +33,10 @@ Esse arquivo não deve conter extensão nenhuma. É o arquivo que usaremos para 
 * Fique à vontade para editar os valores da memória de dados que será imporante para o seu programa;
 
 Pronto! Seu programa está pronto para ser executado, agora basta você executar o clock do logisim e ver a mágica acontecer.
+
+# Limitações
+Nem todas as instruções do MIPS32 foram implementadas. Segue uma lista das instruções que funcionam nesse datapath.
+
+* `add`, `sub`, `slt`, `sll`, `srl`, `and`, `or`, `nor` e `jr` do formato R;
+* `j` e `jal` do formato J;
+* `addi`, `beq`, `bne`, `lw` e `sw` do formato I;
