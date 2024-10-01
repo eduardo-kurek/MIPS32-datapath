@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="2.7.1" version="1.0">
+This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
+<lib desc="#Wiring" name="0">
+    <tool name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="32"/>
+      <a name="incoming" val="32"/>
+    </tool>
+    <tool name="Pin">
+      <a name="facing" val="north"/>
+    </tool>
+    <tool name="Probe">
+      <a name="radix" val="16"/>
+    </tool>
+    <tool name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="16"/>
+    </tool>
+    <tool name="Clock">
+      <a name="facing" val="north"/>
+    </tool>
+  </lib>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#Memory" name="4">
+    <tool name="ROM">
+      <a name="contents">addr/data: 8 8
+0
+</a>
+    </tool>
+  </lib>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#Base" name="6">
+    <tool name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+  </lib>
+  <main name="MemInstr"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="6" map="Button2" name="Poke Tool"/>
+    <tool lib="6" map="Button3" name="Menu Tool"/>
+    <tool lib="6" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="6" name="Poke Tool"/>
+    <tool lib="6" name="Edit Tool"/>
+    <sep/>
+    <tool lib="6" name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+    <tool lib="0" name="Pin">
+      <a name="tristate" val="false"/>
+    </tool>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+    </tool>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+  </toolbar>
+  <circuit name="MemInstr">
+    <a name="circuit" val="MemInstr"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="Dialog plain 12"/>
+    <appear>
+      <rect fill="#ffffff" height="70" rx="5" ry="5" stroke="#000000" stroke-width="2" width="80" x="10" y="0"/>
+      <path d="M40,0 Q44,9 48,0" fill="none" stroke="#808080" stroke-width="2"/>
+      <text font-family="Dialog" font-size="12" text-anchor="middle" x="46" y="42">Memória</text>
+      <text font-family="Dialog" font-size="12" text-anchor="middle" x="47" y="52">de</text>
+      <text font-family="Dialog" font-size="12" text-anchor="middle" x="51" y="62">instruções</text>
+      <text fill="#ff0000" font-family="Dialog" font-size="12" text-anchor="middle" x="21" y="12">end</text>
+      <text fill="#ff0000" font-family="Dialog" font-size="12" text-anchor="middle" x="73" y="12">instr</text>
+      <circ-port height="8" pin="110,410" width="8" x="6" y="6"/>
+      <circ-port height="10" pin="630,300" width="10" x="85" y="5"/>
+      <circ-anchor facing="east" height="6" width="6" x="87" y="7"/>
+    </appear>
+    <wire from="(210,410)" to="(210,480)"/>
+    <wire from="(300,200)" to="(330,200)"/>
+    <wire from="(370,210)" to="(390,210)"/>
+    <wire from="(600,300)" to="(630,300)"/>
+    <wire from="(540,300)" to="(600,300)"/>
+    <wire from="(330,200)" to="(330,210)"/>
+    <wire from="(190,410)" to="(210,410)"/>
+    <wire from="(110,410)" to="(190,410)"/>
+    <wire from="(600,180)" to="(600,300)"/>
+    <wire from="(540,210)" to="(540,300)"/>
+    <wire from="(210,480)" to="(220,480)"/>
+    <wire from="(260,450)" to="(260,510)"/>
+    <wire from="(370,150)" to="(370,210)"/>
+    <wire from="(220,450)" to="(260,450)"/>
+    <wire from="(190,290)" to="(190,410)"/>
+    <wire from="(220,450)" to="(220,480)"/>
+    <wire from="(330,210)" to="(370,210)"/>
+    <wire from="(530,210)" to="(540,210)"/>
+    <comp lib="0" loc="(260,510)" name="Splitter">
+      <a name="fanout" val="32"/>
+      <a name="incoming" val="32"/>
+    </comp>
+    <comp lib="0" loc="(630,300)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="32"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Instruction"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="4" loc="(530,210)" name="ROM">
+      <a name="addrWidth" val="24"/>
+      <a name="dataWidth" val="32"/>
+      <a name="contents">addr/data: 24 32
+23bd1fff 8100000 1048574*0 20040000 20050005 c100004 8100031 23bdffec
+afbf0010 afb3000c afb20008 afb10004 afb00000 49020 20b3ffff 8020
+213082a 10200014 8820 2704022 228482a 200a0001 152a000d 114080
+2484820 8d290000 22280001 84080 2485020 8d4a0000 149082a 10200002
+2202820 c10002a 22310001 8100010 22100001 810000d 8fb00000 8fb10004
+8fb20008 8fb3000c 8fbf0010 23bd0014 3e00008 54880 894820 8d280000
+8d2a0004 ad2a0000 ad280004 3e00008
+</a>
+    </comp>
+    <comp lib="0" loc="(300,200)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="24"/>
+      <a name="incoming" val="24"/>
+    </comp>
+    <comp lib="0" loc="(600,180)" name="Probe">
+      <a name="facing" val="south"/>
+      <a name="radix" val="16"/>
+    </comp>
+    <comp lib="0" loc="(110,410)" name="Pin">
+      <a name="width" val="32"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="PC address"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(370,150)" name="Probe">
+      <a name="facing" val="south"/>
+      <a name="radix" val="16"/>
+    </comp>
+    <comp lib="0" loc="(190,290)" name="Probe">
+      <a name="facing" val="south"/>
+      <a name="radix" val="16"/>
+    </comp>
+  </circuit>
+</project>
